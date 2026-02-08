@@ -12,8 +12,8 @@
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Latar belakang gradien agar efek kaca terlihat */
-            color: #333; /* Warna teks utama gelap */
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -25,24 +25,57 @@
             width: 90vw;
             max-width: 1200px;
             height: 90vh;
-            background-color: rgba(255, 255, 255, 0.5); /* Latar belakang semi-transparan */
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Border semi-transparan */
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Bayangan yang disesuaikan */
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             position: relative;
-            overflow: hidden; /* Sembunyikan overflow dari container utama */
+            overflow: hidden;
             padding: 20px;
             box-sizing: border-box;
-            border-radius: 16px; /* Radius lebih besar untuk efek liquid */
-            backdrop-filter: blur(10px); /* Efek blur untuk glassmorphism */
-            -webkit-backdrop-filter: blur(10px); /* Kompatibilitas untuk Safari */
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Tombol Terjemahan Transparan */
+        .translate-toggle {
+            position: absolute;
+            top: 25px;
+            right: 105px; /* Diletakkan di sebelah foto profil */
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.8em;
+            color: #444;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            outline: none;
+        }
+
+        .translate-toggle:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .translate-toggle:active {
+            transform: scale(0.95);
         }
 
         /* Area Konten yang bisa di-scroll */
         .content-scroll-area {
             width: 100%;
             height: 100%;
-            overflow-y: auto; /* Aktifkan scroll vertikal */
-            padding: 60px 40px; /* Padding agar konten tidak menimpa detail di sudut */
+            overflow-y: auto;
+            padding: 60px 40px;
             box-sizing: border-box;
         }
 
@@ -62,50 +95,45 @@
             background: rgba(0, 0, 0, 0.5);
         }
         
-        /* Styling untuk judul seksi */
         .section-title {
             margin-top: 0;
             margin-bottom: 20px;
             color: #1a1a1a;
-            border-bottom: 2px solid #ccc; /* Mengubah warna border dari hijau ke abu-abu */
+            border-bottom: 2px solid #ccc;
             padding-bottom: 10px;
             display: inline-block;
         }
         
-        /* Grid untuk galeri gambar */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            margin-bottom: 20px; /* Mengurangi margin bawah untuk baris tunggal */
+            margin-bottom: 20px;
         }
 
-        /* Styling untuk baris item tunggal */
         .single-item-row {
             display: flex;
             justify-content: center;
-            margin-bottom: 40px; /* Jarak akhir seksi */
+            margin-bottom: 40px;
         }
         .single-item-row .gallery-item {
             width: 100%;
-            max-width: 186px; /* Ukuran diperbesar 15% dari 162px */
+            max-width: 186px;
         }
 
-        /* Styling untuk link proyek */
         .project-link {
             text-decoration: none;
             color: inherit;
-            display: block; /* Agar link mengisi seluruh area item */
+            display: block;
         }
         
-        /* Styling untuk setiap item galeri */
         .gallery-item {
             display: flex;
             flex-direction: column;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
             border-radius: 8px;
-            background-color: #fff; /* Memberi latar belakang solid */
+            background-color: #fff;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         
@@ -124,8 +152,7 @@
             overflow: hidden;
         }
 
-        .gallery-item .media-container img,
-        .gallery-item .media-container embed {
+        .gallery-item .media-container img {
             width: 100%;
             height: 100%;
             display: block;
@@ -142,18 +169,16 @@
             border-top: 1px solid #e9ecef;
         }
 
-        /* Atur rasio aspek untuk media di dalamnya */
         .gallery-item .media-container {
-            aspect-ratio: 16/9; /* Default untuk proyek */
+            aspect-ratio: 16/9;
         }
         .gallery-item.certificate .media-container {
-             aspect-ratio: 716 / 553; /* Rasio spesifik untuk sertifikat Google */
+             aspect-ratio: 716 / 553;
         }
         .gallery-item.jujitsu-cert .media-container {
-             aspect-ratio: 210 / 297; /* Rasio potret standar A4 */
+             aspect-ratio: 210 / 297;
         }
         
-        /* Styling untuk seksi catatan */
         .notes-section p {
             font-size: 0.9em;
             line-height: 1.6;
@@ -165,7 +190,6 @@
             margin: 0;
         }
 
-
         .top-left-details,
         .bottom-right-details,
         .profile-picture-container,
@@ -173,8 +197,8 @@
             position: absolute;
             font-size: 0.9em;
             letter-spacing: 1px;
-            color: #888; /* Warna abu-abu untuk detail */
-            z-index: 10; /* Pastikan detail selalu di atas konten */
+            color: #888;
+            z-index: 10;
         }
 
         .top-left-details {
@@ -213,25 +237,23 @@
             align-items: flex-end;
         }
 
-        /* Styling untuk QR Code */
         .qr-code {
-            width: 100px; /* Ukuran QR Code */
+            width: 100px;
             height: auto;
             margin-top: 10px;
-            border-radius: 5px; /* Sedikit radius pada sudut QR */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Bayangan lembut */
-            cursor: pointer; /* Menambahkan cursor pointer */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
         }
 
         .japanese-text {
-            font-family: 'Noto Sans JP', sans-serif; /* Font khusus untuk teks Jepang */
+            font-family: 'Noto Sans JP', sans-serif;
             font-size: 0.9em;
             line-height: 1.5;
             margin-top: 5px;
             color: #666;
         }
 
-        /* Styling untuk Pop-up Modal */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -248,13 +270,13 @@
         }
 
         .modal-content {
-            background: rgba(255, 255, 255, 0.7); /* Latar semi-transparan untuk glassmorphism */
-            backdrop-filter: blur(8px); /* Efek blur */
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.3); /* Border lebih halus */
+            border: 1px solid rgba(255, 255, 255, 0.3);
             padding: 30px;
-            border-radius: 16px; /* Radius sudut untuk liquid glass */
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); /* Bayangan yang disesuaikan */
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
             text-align: center;
             max-width: 350px;
             width: 90%;
@@ -287,13 +309,13 @@
             margin: 0 10px;
             font-family: 'Montserrat', sans-serif;
             font-weight: bold;
-            color: #333; /* Warna teks tombol yang lebih netral */
-            background-color: #e0e0e0; /* Warna latar tombol netral */
+            color: #333;
+            background-color: #e0e0e0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         #confirm-btn {
-            background-color: #d8d8d8; /* Sedikit lebih gelap dari netral untuk "Kunjungi" */
+            background-color: #d8d8d8;
         }
 
         #confirm-btn:hover {
@@ -303,7 +325,7 @@
         }
 
         #cancel-btn {
-            background-color: #e0e0e0; /* Warna latar tombol netral */
+            background-color: #e0e0e0;
         }
 
         #cancel-btn:hover {
@@ -312,7 +334,6 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         
-        /* Styling untuk Image Preview Modal */
         .preview-modal-overlay {
             position: fixed;
             top: 0;
@@ -358,8 +379,6 @@
             color: #ccc;
         }
 
-
-        /* Media query untuk layar yang lebih kecil */
         @media (max-width: 768px) {
             .portfolio-container {
                 width: 95vw;
@@ -367,23 +386,25 @@
                 padding: 15px;
             }
             .content-scroll-area {
-                padding: 70px 20px 50px 20px; /* Tambah padding atas untuk foto profil */
+                padding: 70px 20px 50px 20px;
+            }
+            .translate-toggle {
+                right: 75px;
+                padding: 6px 12px;
+                font-size: 0.7em;
             }
             .gallery-grid {
-                grid-template-columns: 1fr; /* Ubah menjadi satu kolom di HP */
+                grid-template-columns: 1fr;
             }
-             /* Hapus span di mobile agar tidak terlalu lebar */
             .gallery-item.span-2 {
                 grid-column: span 1;
             }
             .top-left-details, .bottom-left-details, .bottom-right-details, .profile-picture-container {
-                font-size: 0.7em; /* Aturan umum untuk ukuran font */
+                font-size: 0.7em;
             }
             .top-left-details {
                 top: 15px;
                 left: 15px;
-                right: auto;
-                bottom: auto;
             }
              .profile-picture-container {
                 top: 15px;
@@ -396,231 +417,239 @@
             .bottom-left-details {
                 bottom: 15px;
                 left: 15px;
-                top: auto;
-                right: auto;
             }
             .bottom-right-details {
                 bottom: 15px;
                 right: 15px;
-                top: auto;
-                left: auto;
             }
             .qr-code {
-                width: 80px; /* Ukuran QR Code lebih kecil di HP */
+                width: 80px;
             }
         }
     </style>
 </head>
 <body>
     <div class="portfolio-container">
-        <!-- Area Konten Scrollable --><div class="content-scroll-area">
+        <!-- Tombol Translate -->
+        <button id="translate-btn" class="translate-toggle">
+            <span>🌐</span> <span id="toggle-text">English</span>
+        </button>
+
+        <div class="content-scroll-area">
             
-            <!-- Seksi Proyek --><h2 class="section-title">Proyek</h2>
+            <!-- Seksi Proyek -->
+            <h2 class="section-title translatable" data-id="Proyek" data-en="Projects">Proyek</h2>
             <div class="gallery-grid">
                 <a href="https://dhxo2.github.io/DHX.O2---Marketplace-Produk-Digital/" target="_blank" class="project-link">
                     <div class="gallery-item">
                         <div class="media-container">
-                            <img src="x1.jpg" alt="Gambar Proyek Aplikasi Seluler">
+                            <img src="x1.jpg" alt="Project Marketplace">
                         </div>
-                        <div class="caption">Marketplace Produk Digital</div>
+                        <div class="caption translatable" data-id="Marketplace Produk Digital" data-en="Digital Product Marketplace">Marketplace Produk Digital</div>
                     </div>
                 </a>
                 <a href="https://dhxo2.github.io/SKD1/" target="_blank" class="project-link">
                     <div class="gallery-item">
                          <div class="media-container">
-                            <img src="x2.jpg" alt="Gambar Proyek Branding">
+                            <img src="x2.jpg" alt="Project SKD">
                         </div>
-                        <div class="caption">Soal Latihan SKD Online</div>
+                        <div class="caption translatable" data-id="Soal Latihan SKD Online" data-en="Online Civil Service Practice">Soal Latihan SKD Online</div>
                     </div>
                 </a>
                 <a href="https://dhxo2.github.io/Tes-Numerik-Berhitung-1/" target="_blank" class="project-link">
                     <div class="gallery-item">
                          <div class="media-container">
-                            <img src="x3.jpg" alt="Gambar Proyek Ilustrasi">
+                            <img src="x3.jpg" alt="Project Numerical">
                         </div>
-                        <div class="caption">Latihan Soal Numierik</div>
+                        <div class="caption translatable" data-id="Latihan Soal Numerik" data-en="Numerical Test Practice">Latihan Soal Numerik</div>
                     </div>
                 </a>
                 <a href="https://bio-o2.netlify.app/" target="_blank" class="project-link">
                     <div class="gallery-item">
                          <div class="media-container">
-                            <img src="4.jpg" alt="Gambar Proyek Animasi">
+                            <img src="4.jpg" alt="Project Link Bio">
                         </div>
-                        <div class="caption">Link Bio</div>
+                        <div class="caption translatable" data-id="Link Bio" data-en="Bio Links">Link Bio</div>
                     </div>
                 </a>
             </div>
 
-            <!-- Seksi Sertifikat --><h2 class="section-title">Sertifikat</h2>
+            <!-- Seksi Sertifikat -->
+            <h2 class="section-title translatable" data-id="Sertifikat" data-en="Certificates">Sertifikat</h2>
             <div class="gallery-grid">
 				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="AI Engineer For Milenial.jpg" alt="Gambar Sertifikat Google IT Support">
+                    <div class="media-container">
+                        <img src="AI Engineer For Milenial.jpg" alt="Cert AI Engineer">
                     </div>
                     <div class="caption">AI Engineer For Milenial</div>
                 </div>
 				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="Computational Thinking.jpg" alt="Gambar Sertifikat Google IT Support">
+                    <div class="media-container">
+                        <img src="Computational Thinking.jpg" alt="Cert CT">
                     </div>
                     <div class="caption">Computational Thinking</div>
                 </div>
 				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="Implementasi Kecerdasan Artifisial.jpg" alt="Gambar Sertifikat Google IT Support">
+                    <div class="media-container">
+                        <img src="Implementasi Kecerdasan Artifisial.jpg" alt="Cert Dasar AI">
                     </div>
-                    <div class="caption">Dasar-Dasar Implementasi Kecerdasan Artifisial</div>
+                    <div class="caption translatable" data-id="Dasar-Dasar Implementasi Kecerdasan Artifisial" data-en="Fundamentals of AI Implementation">Dasar-Dasar Implementasi Kecerdasan Artifisial</div>
                 </div>
 				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="Aspek Pengembangan Produk AI.jpg" alt="Gambar Sertifikat Google IT Support">
+                    <div class="media-container">
+                        <img src="Aspek Pengembangan Produk AI.jpg" alt="Cert AI Product">
                     </div>
-                    <div class="caption">Memahami Aspek Pengembangan Produk AI</div>
+                    <div class="caption translatable" data-id="Memahami Aspek Pengembangan Produk AI" data-en="AI Product Development Aspects">Memahami Aspek Pengembangan Produk AI</div>
                 </div>
 				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="Perlindungan Diri di Dunia Maya.jpg" alt="Gambar Sertifikat Google IT Support">
+                    <div class="media-container">
+                        <img src="Perlindungan Diri di Dunia Maya.jpg" alt="Cert Digital Security">
                     </div>
-                    <div class="caption">Pentingnya Menjaga Keamanan Digital</div>
+                    <div class="caption translatable" data-id="Pentingnya Menjaga Keamanan Digital" data-en="Importance of Digital Security">Pentingnya Menjaga Keamanan Digital</div>
                 </div>
 				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c1.jpg" alt="Gambar Sertifikat Google IT Support">
+                    <div class="media-container">
+                        <img src="c1.jpg" alt="Cert LLM">
                     </div>
                     <div class="caption">Introduction to Large Language Models</div>
                 </div>
-                 <div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c2.jpg" alt="Gambar Sertifikat Python for Everybody">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c2.jpg" alt="Cert Responsible AI">
                     </div>
                     <div class="caption">Introduction to Responsible AI</div>
                 </div>
-				                <div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c7.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c7.jpg" alt="Cert AI">
                     </div>
                     <div class="caption">Introduction to AI</div>
                 </div>
-				                <div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c4.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c4.jpg" alt="Cert Prompting">
                     </div>
                     <div class="caption">Discover the Art of Prompting</div>
                 </div>
-				                <div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c5.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c5.jpg" alt="Cert Accelerate AI">
                     </div>
                     <div class="caption">Accelerate Your Job With AI</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c6.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c6.jpg" alt="Cert Generative AI">
                     </div>
                     <div class="caption">Introduction to Generative AI</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c8.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c8.jpg" alt="Cert Business">
                     </div>
                     <div class="caption">Business Analysis & Process Management</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c9.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c9.jpg" alt="Cert Google AI">
                     </div>
                     <div class="caption">Google AI Essentials</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c10.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c10.jpg" alt="Cert AI Tools">
                     </div>
                     <div class="caption">Maximize Productivity With AI Tools</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c11.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c11.jpg" alt="Cert Visualize">
                     </div>
                     <div class="caption">How To Visualize Your Data Using Microsoft Powerpoint</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c12.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c12.jpg" alt="Cert PM">
                     </div>
                     <div class="caption">Introduction to Project Management</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c13.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c13.jpg" alt="Cert Excel">
                     </div>
                     <div class="caption">Finding, Sorting, & Filtering data in Microsoft Excel</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c14.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c14.jpg" alt="Cert AI Principle">
                     </div>
                     <div class="caption">Responsible AI: Applying AI Principles With Google Cloud</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c15.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c15.jpg" alt="Cert Use AI">
                     </div>
                     <div class="caption">Use AI Responsibly</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c18.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c18.jpg" alt="Cert YRI">
                     </div>
                     <div class="caption">Youth Ranger Indonesia District Kalimantan</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c21.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c21.jpg" alt="Cert Mahardika">
                     </div>
                     <div class="caption">Indonesia Emas 2045" - Mahardika of Indonesia</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="GLOBAL STUDY FAIR 2025.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="GLOBAL STUDY FAIR 2025.jpg" alt="Cert Fair">
                     </div>
                     <div class="caption">GLOBAL STUDY FAIR 2025</div>
                 </div>
-				<div class="gallery-item certificate previewable">
-                     <div class="media-container">
-                        <img src="c19.jpg" alt="Gambar Sertifikat Google IT Support">
+                <div class="gallery-item certificate previewable">
+                    <div class="media-container">
+                        <img src="c19.jpg" alt="Cert TOEFL">
                     </div>
                     <div class="caption">Toefl</div>
                 </div>
             </div>
             <div class="single-item-row">
                 <div class="gallery-item jujitsu-cert previewable">
-                     <div class="media-container">
-                        <img src="c17.jfif" alt="Sertifikat Kejuaraan Jujitsu">
+                    <div class="media-container">
+                        <img src="c17.jfif" alt="Cert Jujitsu">
                     </div>
-                    <div class="caption">Kejuaraan Jujitsu</div>
+                    <div class="caption translatable" data-id="Kejuaraan Jujitsu" data-en="Jujitsu Championship">Kejuaraan Jujitsu</div>
                 </div>
-					<div class="gallery-item jujitsu-cert previewable">
-                     <div class="media-container">
-                        <img src="c20.jpg" alt="Sertifikat Kejuaraan Jujitsu">
+                <div class="gallery-item jujitsu-cert previewable">
+                    <div class="media-container">
+                        <img src="c20.jpg" alt="Cert AI4U">
                     </div>
                     <div class="caption">AI4U-Bitlabs</div>
                 </div>
             </div>
 
-            <!-- Seksi Catatan --><h2 class="section-title">Catatan</h2>
+            <!-- Seksi Catatan -->
+            <h2 class="section-title translatable" data-id="Catatan" data-en="Notes">Catatan</h2>
             <div class="notes-section">
-                <p>Proyek website yang saya kerjakan diperkirakan 70% merupakan hasil buatan AI dan 30% buatan saya sendiri. Saya menggunakan AI, khususnya melalui teknik "prompting" (memberikan perintah teks), untuk membantu dalam proses pembuatan website ini. Saya juga menggunakan kreativitas dalam pembuatan website ini.</p>
+                <p class="translatable" 
+                   data-id="Proyek website yang saya kerjakan diperkirakan 70% merupakan hasil buatan AI dan 30% buatan saya sendiri. Saya menggunakan AI, khususnya melalui teknik 'prompting' (memberikan perintah teks), untuk membantu dalam proses pembuatan website ini. Saya juga menggunakan kreativitas dalam pembuatan website ini."
+                   data-en="The website projects I worked on are estimated to be 70% AI-generated and 30% my own creation. I use AI, specifically through 'prompting' techniques (text commands), to assist in this website development process. I also apply my own creativity in making this website.">
+                   Proyek website yang saya kerjakan diperkirakan 70% merupakan hasil buatan AI dan 30% buatan saya sendiri. Saya menggunakan AI, khususnya melalui teknik "prompting" (memberikan perintah teks), untuk membantu dalam proses pembuatan website ini. Saya juga menggunakan kreativitas dalam pembuatan website ini.
+                </p>
             </div>
 
         </div>
 
-        <!-- Detail di Sudut-sudut --><div class="top-left-details">
+        <div class="top-left-details">
             dhikasatya.o2<br>
             2025
         </div>
 
         <div class="profile-picture-container">
-            <img src="photo.jpg" alt="Foto Profil">
+            <img src="photo.png" alt="Profile Photo">
         </div>
 
         <div class="bottom-left-details">
@@ -631,34 +660,52 @@
         </div>
 
         <div class="bottom-right-details">
-            <!-- QR Code menggantikan Barcode --><img id="qr-code-img" src="QR.png" alt="QR Code LinkedIn Dhika Satya" class="qr-code">
+            <img id="qr-code-img" src="QR.png" alt="LinkedIn QR" class="qr-code">
         </div>
     </div>
 
-    <!-- Pop-up Modal Konfirmasi --><div id="popup-modal" class="modal-overlay hidden">
+    <!-- Modal Konfirmasi -->
+    <div id="popup-modal" class="modal-overlay hidden">
         <div class="modal-content">
-            <p>Anda akan mengunjungi profil LinkedIn. Lanjutkan?</p>
+            <p class="translatable" data-id="Anda akan mengunjungi profil LinkedIn. Lanjutkan?" data-en="You will visit the LinkedIn profile. Continue?">Anda akan mengunjungi profil LinkedIn. Lanjutkan?</p>
             <div class="modal-buttons">
-                <button id="confirm-btn">Kunjungi</button>
-                <button id="cancel-btn">Batal</button>
+                <button id="confirm-btn" class="translatable" data-id="Kunjungi" data-en="Visit">Kunjungi</button>
+                <button id="cancel-btn" class="translatable" data-id="Batal" data-en="Cancel">Batal</button>
             </div>
         </div>
     </div>
     
-    <!-- Pop-up Modal Pratinjau Gambar --><div id="image-preview-modal" class="preview-modal-overlay hidden">
+    <!-- Modal Preview -->
+    <div id="image-preview-modal" class="preview-modal-overlay hidden">
         <span class="close-preview-btn">&times;</span>
         <img class="preview-modal-content" id="preview-image">
     </div>
 
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- LOGIKA TRANSLASI ---
+            const translateBtn = document.getElementById('translate-btn');
+            const toggleText = document.getElementById('toggle-text');
+            const translatableElements = document.querySelectorAll('.translatable');
+            let currentLang = 'id'; // Default Indonesia
+
+            translateBtn.addEventListener('click', () => {
+                currentLang = currentLang === 'id' ? 'en' : 'id';
+                
+                translatableElements.forEach(el => {
+                    const newText = el.getAttribute(`data-${currentLang}`);
+                    if (newText) el.textContent = newText;
+                });
+
+                // Update text tombol
+                toggleText.textContent = currentLang === 'id' ? 'English' : 'Indonesia';
+            });
+
             // --- LOGIKA MODAL KONFIRMASI QR CODE ---
             const qrCode = document.getElementById('qr-code-img');
             const confirmModal = document.getElementById('popup-modal');
             const confirmBtn = document.getElementById('confirm-btn');
             const cancelBtn = document.getElementById('cancel-btn');
-
             const linkedInUrl = 'https://www.linkedin.com/in/dhika-satya-788120377/';
 
             qrCode.addEventListener('click', () => {
@@ -703,7 +750,6 @@
             closePreviewBtn.addEventListener('click', closePreviewModal);
 
             previewModal.addEventListener('click', (event) => {
-                // Tutup jika area overlay hitam diklik, bukan gambar itu sendiri
                 if (event.target === previewModal) {
                     closePreviewModal();
                 }
